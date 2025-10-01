@@ -45,3 +45,6 @@ vcf-month-picker-flow/.vscode/.copilot-plugin
 /vcf-month-picker-flow-demo/types.d.ts
 /vcf-month-picker-flow-demo/vite.config.ts
 /vcf-month-picker-flow-demo/vite.generated.ts
+
+# tmp local copy of the month picker web component
+/vcf-month-picker-flow/src/main/resources/META-INF/resources/frontend/vcf-month-picker/**

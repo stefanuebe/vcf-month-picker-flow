@@ -9,7 +9,7 @@
     <packaging>war</packaging>
     <name>Month Picker Add-on Demo</name>
 
-    <version>2.0.1-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
     <inceptionYear>2025</inceptionYear>
     <organization>
         <name>Vaadin Ltd</name>
@@ -17,9 +17,9 @@
     </organization>
 
     <properties>
-        <vaadin.version>24.7.0</vaadin.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <vaadin.version>25.0.0-alpha11</vaadin.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
@@ -40,15 +40,7 @@
         <!-- Flow -->
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>flow-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-data</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-html-components</artifactId>
+            <artifactId>vaadin-core</artifactId>
         </dependency>
 
         <!-- Component -->
@@ -102,9 +94,9 @@
             </plugin>
             <!-- We use jetty plugin, replace it with your favourite developing servlet container -->
             <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>11.0.20</version>
+                <groupId>org.eclipse.jetty.ee11</groupId>
+                <artifactId>jetty-ee11-maven-plugin</artifactId>
+                <version>12.1.1</version>
                 <configuration>
                     <scan>1</scan>
                 </configuration>
@@ -125,6 +117,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <frontendHotdeploy>true</frontendHotdeploy>
+                </configuration>
             </plugin>
         </plugins>
     </build>
