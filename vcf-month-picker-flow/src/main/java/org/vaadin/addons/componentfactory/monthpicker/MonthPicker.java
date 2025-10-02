@@ -21,9 +21,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.NpmPackage;
@@ -33,6 +30,9 @@ import com.vaadin.flow.component.shared.HasTooltip;
 import com.vaadin.flow.function.SerializableFunction;
 import com.vaadin.flow.shared.Registration;
 import jakarta.annotation.Nullable;
+import tools.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.JsonNodeFactory;
+import tools.jackson.databind.node.ObjectNode;
 
 
 /**
@@ -50,9 +50,8 @@ import jakarta.annotation.Nullable;
  * @see MonthPickerI18n
  */
 @Tag("vcf-month-picker")
-//@NpmPackage(value = "@vaadin-component-factory/vcf-month-picker", version = "2.0.0")
-//@JsModule("@vaadin-component-factory/vcf-month-picker/dist/src/vcf-month-picker.js")
-@JsModule("./vcf-month-picker/vcf-month-picker.ts")
+@NpmPackage(value = "@vaadin-component-factory/vcf-month-picker", version = "2.0.0")
+@JsModule("@vaadin-component-factory/vcf-month-picker/dist/src/vcf-month-picker.js")
 public class MonthPicker extends AbstractSinglePropertyField<MonthPicker, YearMonth>
     implements HasLabel, HasAutoOpen, HasClearButton, HasPlaceholder, HasHelper, HasValidation,
     HasTooltip, Focusable<MonthPicker> {
